@@ -11,14 +11,14 @@ It also requires the [libusb](http://www.libusb.org/) library, for driver-free i
 
 Once those two prerequisites are in place, the rest of the code here becomes usable.
 
-# Build
+## Build
 ```bash
 sudo apt-get install build-essential gcc make libftdi-dev libusb-dev
 cd ft232r_prog
 make
 ```
 
-# Usage
+## Usage
 ```bash
 ❯ ./ft232r_prog --help
 
@@ -59,5 +59,12 @@ where <arg> must be any of:
     --invert_ri    Inverts the current value of RI
 ```
 
-# See also
+## Examples
+Reprogram a FT232 Serial -> USB cable, e.g. P1 Smart Meter Cable, to invert the RXD values:
+```bash
+sudo ./ft232r_prog --save backup.eeprom
+sudo ./ft232r_prog --invert_rxd
+```
+
+## See also
 * https://github.com/richardeoin/ftx-prog
